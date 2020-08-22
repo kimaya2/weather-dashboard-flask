@@ -1,5 +1,20 @@
 import requests
 import configparser
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def waether_dashboard():
+    return render_template("home.html")
+
+@app.route("/results", methods = ['POST'])
+def render_results():
+    city = request.form['City']
+    return "City: " + city
+
+if __name__ == "__main__":
+    app.run()
 
 def get_api_key():
     config = configparser.ConfigParser()

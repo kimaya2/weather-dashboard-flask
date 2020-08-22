@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Weather Dashboard</title>
+    </head>
+<body>
+<h2>Weather Dashboard in Flask</h2>
+<form action="{{url_for('render_results')}}" method="POST">
+    City Name: <input type="text" name="City"><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
